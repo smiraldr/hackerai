@@ -1,9 +1,5 @@
-import { describe, it, expect, afterEach } from "@jest/globals";
-import {
-  IONET_MODEL_ID,
-  IONET_MODEL_KEY,
-  isIonetConfigured,
-} from "@/lib/ai/ionet";
+import { describe, it, expect, afterEach, jest } from "@jest/globals";
+import { IONET_MODEL_KEY, isIonetConfigured } from "@/lib/ai/ionet";
 import { getModelDisplayName, myProvider } from "@/lib/ai/providers";
 
 describe("IO Intelligence provider", () => {
@@ -39,7 +35,12 @@ describe("IO Intelligence provider", () => {
   });
 
   it("defaults the model id to the IO Intelligence starter model", () => {
-    expect(IONET_MODEL_ID).toBe("openai/gpt-oss-20b");
+    delete process.env.IONET_MODEL_ID;
+    let modelId = "";
+    jest.isolateModules(() => {
+      modelId = require("@/lib/ai/ionet").IONET_MODEL_ID;
+    });
+    expect(modelId).toBe("openai/gpt-oss-20b");
   });
 
   it("registers the IO Intelligence model with the shared provider", () => {

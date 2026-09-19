@@ -333,6 +333,14 @@ OPENAI_API_KEY=${envVars.OPENAI_API_KEY}
 # Configure independently in Vercel and Trigger.dev; the PostHog flag is also required.
 ABLITERATION_API_KEY=
 
+# Optional IO Intelligence (io.net) OpenAI-compatible provider.
+# Create a key at: https://io.net/
+# IONET_MODEL_ID accepts model ids from https://api.intelligence.io.solutions/api/v1/models,
+# subject to io.net access tiers.
+IONET_API_KEY=
+# IONET_BASE_URL=https://api.intelligence.io.solutions/api/v1
+# IONET_MODEL_ID=openai/gpt-oss-20b
+
 # =============================================================================
 # CODE EXECUTION - CLOUD SANDBOX (Required for Agent Mode)
 # =============================================================================
