@@ -6,6 +6,7 @@ import {
   ABLITERATION_MODEL_ID,
   ABLITERATION_MODEL_KEY,
 } from "@/lib/ai/abliteration";
+import { ionet, IONET_MODEL_ID, IONET_MODEL_KEY } from "@/lib/ai/ionet";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import type { ChatMode, SelectedModel } from "@/types/chat";
 import { openrouterAttributionHeaders } from "@/lib/ai/openrouter-attribution";
@@ -1282,6 +1283,7 @@ const baseProviders: ReturnType<typeof buildProviderMap> = {
   [ABLITERATION_LARGE_V2_MODEL_KEY]: abliteration(
     ABLITERATION_LARGE_V2_MODEL_ID,
   ),
+  [IONET_MODEL_KEY]: ionet(IONET_MODEL_ID),
 };
 
 export type ModelName = keyof typeof baseProviders;
@@ -1313,6 +1315,7 @@ export const modelDisplayNames: Record<ModelName, string> &
   Record<string, string> = {
   [ABLITERATION_MODEL_KEY]: "Abliteration abliterated-model",
   [ABLITERATION_LARGE_V2_MODEL_KEY]: "Abliteration abliterated-model-large-v2",
+  [IONET_MODEL_KEY]: "IO Intelligence",
   "ask-model": "Auto, an intelligent model router built by HackerAI",
   "ask-model-free": "Auto, an intelligent model router built by HackerAI",
   "ask-model-free-glm": "Auto, an intelligent model router built by HackerAI",
