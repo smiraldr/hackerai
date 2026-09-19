@@ -36,7 +36,7 @@ You'll need the following accounts:
 **Optional:**
 
 - [abliteration.ai](https://abliteration.ai/) - AI models for security requests that standard models may refuse
-- [IO Intelligence](https://io.net/) - OpenAI-compatible models served by io.net (set `IONET_API_KEY`; optional `IONET_MODEL_ID` selects any model from the IO Intelligence catalog)
+- [IO Intelligence](https://io.net/) - OpenAI-compatible models served by io.net (set `IONET_API_KEY`; optional `IONET_MODEL_ID` selects a model from the IO Intelligence catalog, subject to io.net access tiers)
 - [Perplexity](https://perplexity.ai/) - Web search functionality
 - [Jina AI](https://jina.ai/reader) - Web URL content retrieval
 - [Redis](https://redis.io/) - Stream resumption
